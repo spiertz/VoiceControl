@@ -1,4 +1,4 @@
-Welcome to week 1 of the voice Control lecture. In the following, your tasks of this week are listed. If you have any questions or problems, don't hesitate to contact me in my consultation Hours.
+Welcome to week 1 of the voice Control lecture. In the following, your tasks of this week are listed. If you have any questions or problems, don't hesitate to contact me in my consultation hours.
 
 a) Install Python (Version 3.11 or higher) (roughly 1 hour).
 
