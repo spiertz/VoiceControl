@@ -1,12 +1,12 @@
 Welcome to week 4 of the voice Control lecture. In the following, your tasks of this week are listed. If you have any questions or problems, don't hesitate to contact me in my consultation hours.
 
-a) Download the zip-file with the solutions of last the week.
+a) Download the solutions of last the week.
 
 b) Compare your solutions for the programming exercise of former week with the given reference solutions (roughly 0,5 hour).
 
 c) Compare your solutions for the exam preparations of former week with the given reference solutions (roughly 1 hour).
 
-d) Download the zip-file with the tasks of this week.
+d) Download the files of the week from the cloud.
 
 e) Read (and understand) the content of the given Jupyter Notebook (roughly 2 hours).
 

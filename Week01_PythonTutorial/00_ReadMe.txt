@@ -4,7 +4,7 @@ a) Install Python (Version 3.11 or higher) (roughly 1 hour).
 
 b) Install Jupyter Notebooks (roughly 1 hour).
 
-c) Download the zip-file of the week and extract it to your working directory.
+c) Download the files of the week from the cloud.
 
 d) Learn the usage of Jupyter Notebooks and learn Python by working with the proposed chapters of the Python tutorial (roughly 5 hours).
 
