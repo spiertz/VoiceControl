@@ -10,4 +10,4 @@ d) Write the mock exam.
 
 e) Catch up all missed stuff from the lessons so far.
 
-f) Prepare ate least one comment for the FAQ: What can be improved for this course?
+f) Prepare at least one comment for the FAQ: What can be improved for this course?
