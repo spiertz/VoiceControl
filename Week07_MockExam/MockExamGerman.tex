@@ -1,0 +1,326 @@
+% Quelle des Templates: https://de.wikipedia.org/wiki/LaTeX
+
+\documentclass[12pt]{exam}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{amssymb}
+\usepackage{trfsigns}
+\usetikzlibrary{positioning}
+\usepackage{hyperref}
+\usepackage{verbatim}
+\usepackage{listings}
+\usepackage[siunitx,european]{circuitikz}
+\usepackage{subcaption}
+\usepackage{pythonhighlight}
+\usepackage[utf8]{inputenc}
+
+\newcommand{\emptybox}[2][\textwidth]{%
+  \begingroup
+  \setlength{\fboxsep}{-\fboxrule}%
+  \noindent\framebox[#1]{\rule{0pt}{#2}}%
+  \endgroup
+}
+
+\begin{document}
+
+\begin {center}
+Technische Hochschule\\
+Würzburg-Schweinfurt \\
+Fakultät Elektrotechnik\\
+Sommersemester 2026 \\
+\end{center}
+
+\begin{tabular}{ll}
+Sprachsteuerung:& Studiengang Elektro- und Informationstechnik (Bachelor) \\
+Prozessdatenverarbeitung:& Studiengang Elektro- und Informationstechnik (Bachelor) \\
+Speech Recognition:& Studiengang Robotik (Bachelor) \\
+&\\
+Datum: & 07.05.2026 \\
+Dauer: & 90 Minuten \\
+Hilfsmittel: & ein DIN A4 Blatt Formelsammlung (beidseitig) und Taschenrechner \\
+Anzahl der Aufgaben: & 5\\
+&\\
+\end{tabular}
+
+\begin{tabular}{ll}
+Name:&...........................................\\
+&\\
+Matrikelnummer:&...........................................\\
+&\\
+Studiengang:&...........................................\\
+&\\
+Erstprüfer:&Prof. Dr.-Ing. Martin Spiertz\\
+Zweitprüfer:&\\
+&\\
+\end{tabular}
+
+\begin{tabular}{l}
+Wichtige Hinweise: \\
+Bearbeiten Sie die Aufgaben ausschließlich in den jeweiligen Lücken im Arbeitsblatt.\\
+Sollte zusätzlicher Platz benötigt werden, werden Zusatzblätter ausgeteilt.\\
+Kennzeichnen Sie auch alle Zusatzblätter mit Ihrem Namen.
+\end {tabular}
+
+\begin{questions}
+\clearpage %Aufgabe 1
+\question Aufgabe (10 Punkte):\\
+\begin{parts}
+\part Geben Sie die mathematische Beschreibung eines digitalen Signals an, dass den maximalen Pegel in dB FS hat. Berechnen Sie den dazugehörigen Pegel in dB FS?\\\\
+\begin{centering}
+\begin{tikzpicture} %Bild 3
+\draw[step =.5cm ,gray ,very  thin] (0,0)  grid(15 ,5);
+\end{tikzpicture}
+\end{centering}\\\\
+Ein Signal $x(t)=\cos\left(500\cdot t\right)$ wird mit $r=249$ Hz abgetastet.
+\part Verursacht diese Abtastung Alias?\\\\
+\begin{centering}
+\begin{tikzpicture} %Bild 3
+\draw[step =.5cm ,gray ,very  thin] (0,0)  grid(15 ,2);
+\end{tikzpicture}
+\end{centering}\\\\
+\part Berechnen Sie das abgetastete Signal für $n=2$. Hinweis: $x(n)=x\left(t=n/r\right)$\\\\
+\begin{centering}
+\begin{tikzpicture} %Bild 3
+\draw[step =.5cm ,gray ,very  thin] (0,0)  grid(15 ,7);
+\end{tikzpicture}
+\end{centering}\\\\
+\clearpage
+Ein FIR Filter ist gegeben: $h(n)=\left[1; -1\right]$
+\part Ist $h(n)$ stabil? (Begründen Sie Ihre Antwort)\\\\
+\begin{centering}
+\begin{tikzpicture} %Bild 3
+\draw[step =.5cm ,gray ,very  thin] (0,0)  grid(15 ,2);
+\end{tikzpicture}
+\end{centering}\\\\
+\part Berechnen Sie den Realteil der Übertragungsfunktion $H(f)$ von $h(n)$. Ist der Realteil für ein beliebiges $f$ negativ?\\\\
+\begin{centering}
+\begin{tikzpicture} %Bild 3
+\draw[step =.5cm ,gray ,very  thin] (0,0)  grid(15 ,5);
+\end{tikzpicture}
+\end{centering}\\\\
+Ein Signal $y(n)$ wird durch folgenden Python Code erzeugt:
+\begin{python}
+import numpy as np
+y = np.random.randn(10000)
+\end{python}
+\part Bestimmen Sie den Python Code um den Mittelwert und die Standardabweichung eines Blocks von $y(n)$ beginnend bei $n=1000$ und eine Blocklänge von $N=1000$ zu bestimmen.\\\\
+\begin{centering}
+\begin{tikzpicture} %Bild 3
+\draw[step =.5cm ,gray ,very  thin] (0,0)  grid(15 ,5);
+\end{tikzpicture}
+\end{centering}\\\\
+\end{parts}
+
+\clearpage %Aufgabe 2
+\question Aufgabe (10 Punkte):\\
+\begin{parts}
+\part Geben Sie zwei Gründe für die Benutzung von Zeropadding bei einer DFT an.\\\\
+\begin{centering}
+\begin{tikzpicture} %Bild 3
+\draw[step =.5cm ,gray ,very  thin] (0,0)  grid(15 ,5);
+\end{tikzpicture}
+\end{centering}\\\\
+\part Warum sollte das Eingangssignal der DFT mit einer Fensterfunktion multipliziert werden bevor man die DFT anwendet?\\\\
+\begin{centering}
+\begin{tikzpicture} %Bild 3
+\draw[step =.5cm ,gray ,very  thin] (0,0)  grid(15 ,5);
+\end{tikzpicture}
+\end{centering}\\\\
+\clearpage
+Im Folgenden wird eine STFT auf ein Signal $x(n)$ angewendet. Die Abtastrate ist $r=48$ kHz, das Signal hat eine Dauer von $70$ Minuten. Die Blocklänge ist $N=1000$, die Überlappung ist $75$ \%, die Transformationslänge ist $K=2028$.
+\part Was sind die Vorteile von großen Blocklängen $N$? Was sind die Vorteile von kurzen Blocklängen $N$?\\\\
+\begin{centering}
+\begin{tikzpicture} %Bild 3
+\draw[step =.5cm ,gray ,very  thin] (0,0)  grid(15 ,5);
+\end{tikzpicture}
+\end{centering}\\\\
+\part Bestimmen Sie die Größe der Matrix des resultierenden Spektrogramms.\\\\
+\begin{centering}
+\begin{tikzpicture} %Bild 3
+\draw[step =.5cm ,gray ,very  thin] (0,0)  grid(15 ,7);
+\end{tikzpicture}
+\end{centering}\\\\
+\part Was bedeuten die Abkürzungen DFT, FFT und STFT?\\\\
+\begin{centering}
+\begin{tikzpicture} %Bild 3
+\draw[step =.5cm ,gray ,very  thin] (0,0)  grid(15 ,2);
+\end{tikzpicture}
+\end{centering}
+\end{parts}
+
+\clearpage %Aufgabe 3
+\question Aufgabe (10 Punkte):\\
+\begin{parts}
+\part Ein Signal hat die Frequenz $f=1234$ Hz. Bestimmen Sie die dazugehörigen Werte in Bark und mel.\\\\
+\begin{centering}
+\begin{tikzpicture} %Bild 3
+\draw[step =.5cm ,gray ,very  thin] (0,0)  grid(15 ,5);
+\end{tikzpicture}
+\end{centering}\\\\
+\part Was ist die Zeitauflösung in Millisekunden und die Frequenzauflösung in Bark für das menschliche Gehör?\\\\
+\begin{centering}
+\begin{tikzpicture} %Bild 3
+\draw[step =.5cm ,gray ,very  thin] (0,0)  grid(15 ,5);
+\end{tikzpicture}
+\end{centering}\\\\
+\clearpage
+Im Folgenden gilt: $y(n)=x(n)+d(n)$, $x(n)$ und $d(n)$ sind unkorreliert. Bei $d(n)$ handelt es sich um additives weißes Rauschen.
+\part Für welches $p$ ist folgende Gleichung erfüllt: $\left|Y(f)\right|^p\approx\left|X(f)\right|^p+\left|D(f)\right|^p$\\\\
+\begin{centering}
+\begin{tikzpicture} %Bild 3
+\draw[step =.5cm ,gray ,very  thin] (0,0)  grid(15 ,2);
+\end{tikzpicture}
+\end{centering}\\\\
+\part Wie lautet die Abkürzung für das gegebene Rauschmodell?\\\\
+\begin{centering}
+\begin{tikzpicture} %Bild 3
+\draw[step =.5cm ,gray ,very  thin] (0,0)  grid(15 ,3);
+\end{tikzpicture}
+\end{centering}\\\\
+\part Welche Eigenschaften erfüllt das Spektrum von $d(n)$?\\\\
+\begin{centering}
+\begin{tikzpicture} %Bild 3
+\draw[step =.5cm ,gray ,very  thin] (0,0)  grid(15 ,3);
+\end{tikzpicture}
+\end{centering}\\\\
+\part Welche Eigenschaften erfüllen die Abtastwerte $d(n)$ im Zeitbereich?\\\\
+\begin{centering}
+\begin{tikzpicture} %Bild 3
+\draw[step =.5cm ,gray ,very  thin] (0,0)  grid(15 ,5);
+\end{tikzpicture}
+\end{centering}
+\end{parts}
+
+\clearpage %Aufgabe 4
+\question Aufgabe (10 Punkte):\\
+\begin{parts}
+\part Menschliche Sprache wird mit einem Mikrofon aufgenommen. Was ist der typische Frequenzbereich der menschlichen Sprache? Was ist der typische Mittelwert des aufgenommenen Signals?\\\\
+\begin{centering}
+\begin{tikzpicture} %Bild 3
+\draw[step =.5cm ,gray ,very  thin] (0,0)  grid(15 ,6);
+\end{tikzpicture}
+\end{centering}\\\\
+\part Welches Delay erzeugt ein symmetrisches FIR-Filter im Durchlassbereich in Millisekunden? Die Länge des Filters beträgt $N=20$, die Abtastrate beträgt $r=16$ kHz.\\\\
+\begin{centering}
+\begin{tikzpicture} %Bild 3
+\draw[step =.5cm ,gray ,very  thin] (0,0)  grid(15 ,6);
+\end{tikzpicture}
+\end{centering}\\\\
+\clearpage
+Im Folgenden wird das IIR-Filter $y(n)=a\cdot y(n-1)+(1-a)\cdot x(n)$ betrachtet.
+\part Für welche Werte von $a$ ist das Filter stabil?\\\\
+\begin{centering}
+\begin{tikzpicture} %Bild 3
+\draw[step =.5cm ,gray ,very  thin] (0,0)  grid(15 ,3);
+\end{tikzpicture}
+\end{centering}\\\\
+\part Geben Sie die Verstärkung des Gleichanteils an: $H\left(f=0\right)$.\\\\
+\begin{centering}
+\begin{tikzpicture} %Bild 3
+\draw[step =.5cm ,gray ,very  thin] (0,0)  grid(15 ,5);
+\end{tikzpicture}
+\end{centering}\\\\
+\part Ein Eingangssignal $x(n)$ ist gegeben. Ergänzen Sie den Python Code, um das obige IIR-Filter zu implementieren.\\\\
+\begin{python}
+import numpy as np
+a = 0.9
+N = 1000
+x = np.random.randn(N)
+\end{python}
+\begin{centering}
+\begin{tikzpicture} %Bild 3
+\draw[step =.5cm ,gray ,very  thin] (0,0)  grid(15 ,5);
+\end{tikzpicture}
+\end{centering}
+\end{parts}
+
+\clearpage %Aufgabe 5
+\question Aufgabe (10 Punkte):\\
+Die folgenden zehn Python-Schnipsel sollen alle mit einem vorangestellten
+\begin{python}
+import numpy as np
+\end{python}
+beginnen. Bestimmen Sie für jeden Schnipsel, ob die Ausgabe A oder B ist (durch Markieren der korrekten Ausgabe auf dem Aufgabenblatt).
+
+\begin{python}
+x = np.ones(5)
+assert x.sum()==5, `A'
+print(`B')
+\end{python}
+
+\begin{python}
+x = np.array([1, 0, 0])
+a = np.array([1, -0.5])
+y = np.array([0, 0])
+for i in range(2):
+    y[i] = x[i] + 0.5 * y[i-1] if i > 0 else x[i]
+assert (y == [1, 0.5]).all(), `A'
+print(`B')
+\end{python}
+
+\begin{python}
+x = np.array([1, 0, 0])
+b = np.array([1, 1, 1])
+y = np.convolve(x, b, mode='full')
+assert (y == [1, 1, 1, 0, 0]).all(), `A'
+print(`B')
+\end{python}
+
+\begin{python}
+x = np.array([1, 0, 0, 0])
+X = np.fft.fft(x)
+assert X[0] == X[-1], `A'
+print(`B')
+\end{python}
+
+\begin{python}
+x = np.array([1, 2, 3])
+b = np.array([1, 1])
+y = np.convolve(x, b, mode='valid')
+assert (y == [3, 5]).all(), `A'
+print(`B')
+\end{python}
+
+\begin{python}
+x = np.array([1, 2, 3, 4])
+X = np.fft.fft(x)
+assert np.isreal(X).all(), `A'
+print(`B')
+\end{python}
+
+\begin{python}
+x = np.array([1, 1, 1, 1])
+X = np.fft.fft(x)
+assert abs(X[1]) == 0, `A'
+print(`B')
+\end{python}
+
+\begin{python}
+x = np.array([1, 2, 3])
+assert np.var(x) == 0.6666666666666666, `A'
+print(`B')
+\end{python}
+
+\begin{python}
+x = np.array([1, 2, 3])
+assert np.std(x) == 1, `A'
+print(`B')
+\end{python}
+
+\begin{python}
+x = np.array([1, 2, 3])
+assert np.mean(x) == 2, `A'
+print(`B')
+\end{python}
+
+\end{questions}
+\end{document}
+
+
+

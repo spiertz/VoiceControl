@@ -1,0 +1,333 @@
+% Quelle des Templates: https://de.wikipedia.org/wiki/LaTeX
+
+\documentclass[12pt]{exam}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{amssymb}
+\usepackage{trfsigns}
+\usetikzlibrary{positioning}
+\usepackage{hyperref}
+\usepackage{verbatim}
+\usepackage{listings}
+\usepackage[siunitx,european]{circuitikz}
+\usepackage{subcaption}
+\usepackage{pythonhighlight}
+\usepackage[utf8]{inputenc}
+
+\newcommand{\emptybox}[2][\textwidth]{%
+  \begingroup
+  \setlength{\fboxsep}{-\fboxrule}%
+  \noindent\framebox[#1]{\rule{0pt}{#2}}%
+  \endgroup
+}
+
+\begin{document}
+
+\begin {center}
+Technische Hochschule\\
+Würzburg-Schweinfurt \\
+Faculty Electrical Engineering\\
+Summer 2026 \\
+\end{center}
+
+\begin{tabular}{ll}
+Sprachsteuerung:& Degree program Elektro- und Informationstechnik (Bachelor) \\
+Prozessdatenverarbeitung:& Degree program Elektro- und Informationstechnik (Bachelor) \\
+Speech Recognition:& Degree program Robotics (Bachelor) \\
+&\\
+Date: & 07.05.2026 \\
+Duration: & 90 Minutes \\
+Auxiliary means: & one page DIN A4 formulary (both sided) and calculator \\
+Number of tasks: & 5\\
+&\\
+\end{tabular}
+
+\begin{tabular}{ll}
+Name:&...........................................\\
+&\\
+Matriculation number:&...........................................\\
+&\\
+Degree program:&...........................................\\
+&\\
+First examiner:&Prof. Dr.-Ing. Martin Spiertz\\
+Second examiner:&\\
+&\\
+\end{tabular}
+
+\begin{tabular}{l}
+Important hints: \\
+Complete the tasks exclusively in the respective spaces provided in the worksheet.\\
+If additional space is required, supplementary sheets will be distributed.\\
+Please label all supplementary sheets with your name.
+\end {tabular}
+
+\begin{questions}
+\clearpage %Aufgabe 1
+\question Task (10 points):\\
+\begin{parts}
+\part Give the mathematical description of a digital signal, which has the highest possible digital level in dB FS. Evaluate the corresponding level in dB FS.\\\\
+\begin{centering}
+\begin{tikzpicture} %Bild 3
+\draw[step =.5cm ,gray ,very  thin] (0,0)  grid(15 ,5);
+\end{tikzpicture}
+\end{centering}\\\\
+A signal $x(t)=\cos\left(500\cdot t\right)$ is sampled with $r=249$ Hz.
+\part Is this sampling causing Alias?\\\\
+\begin{centering}
+\begin{tikzpicture} %Bild 3
+\draw[step =.5cm ,gray ,very  thin] (0,0)  grid(15 ,2);
+\end{tikzpicture}
+\end{centering}\\\\
+\part Evaluate the sampled signal for $n=2$. Hint: $x(n)=x\left(t=n/r\right)$\\\\
+\begin{centering}
+\begin{tikzpicture} %Bild 3
+\draw[step =.5cm ,gray ,very  thin] (0,0)  grid(15 ,7);
+\end{tikzpicture}
+\end{centering}\\\\
+\clearpage
+A FIR filter is given by: $h(n)=\left[1; -1\right]$
+\part Is $h(n)$ stable? (give a reason for your answer)\\\\
+\begin{centering}
+\begin{tikzpicture} %Bild 3
+\draw[step =.5cm ,gray ,very  thin] (0,0)  grid(15 ,2);
+\end{tikzpicture}
+\end{centering}\\\\
+\part Evaluate the real part of the transfer function $H(f)$ of $h(n)$. Is the real part negative for any $f$?\\\\
+\begin{centering}
+\begin{tikzpicture} %Bild 3
+\draw[step =.5cm ,gray ,very  thin] (0,0)  grid(15 ,5);
+\end{tikzpicture}
+\end{centering}\\\\
+A signal $y(n)$ is generated through the following Python code:
+\begin{python}
+import numpy as np
+y = np.random.randn(10000)
+\end{python}
+\part Give the Python code to evaluate the mean value and the standard deviation of a block of $y(n)$ starting at $n=1000$ with a blocklength of $N=1000$.\\\\
+\begin{centering}
+\begin{tikzpicture} %Bild 3
+\draw[step =.5cm ,gray ,very  thin] (0,0)  grid(15 ,5);
+\end{tikzpicture}
+\end{centering}\\\\
+\end{parts}
+
+\clearpage %Aufgabe 2
+\question Task (10 points):\\
+\begin{parts}
+\part Give two reasons for using zeropadding for a DFT.\\\\
+\begin{centering}
+\begin{tikzpicture} %Bild 3
+\draw[step =.5cm ,gray ,very  thin] (0,0)  grid(15 ,5);
+\end{tikzpicture}
+\end{centering}\\\\
+\part Why should a window function be multiplied with a signal before applying a DFT?\\\\
+\begin{centering}
+\begin{tikzpicture} %Bild 3
+\draw[step =.5cm ,gray ,very  thin] (0,0)  grid(15 ,5);
+\end{tikzpicture}
+\end{centering}\\\\
+\clearpage
+In the following a STFT is applied to the signal $x(n)$. The sampling rate is $r=48$ kHz, the signal has a duration of $70$ minutes. The blocklength is $N=1000$, the overlapping is $75$ \%, the transform length is $K=2028$.
+\part What are the advantages of using a large blocklength $N$? What are the advantages of using a small blocklength $N$?\\\\
+\begin{centering}
+\begin{tikzpicture} %Bild 3
+\draw[step =.5cm ,gray ,very  thin] (0,0)  grid(15 ,5);
+\end{tikzpicture}
+\end{centering}\\\\
+\part Determine the size of the matrix of the resulting spectrogram. \\\\
+\begin{centering}
+\begin{tikzpicture} %Bild 3
+\draw[step =.5cm ,gray ,very  thin] (0,0)  grid(15 ,7);
+\end{tikzpicture}
+\end{centering}\\\\
+\part What is the meaning of the abbreviations DFT, FFT and STFT?
+\\\\
+\begin{centering}
+\begin{tikzpicture} %Bild 3
+\draw[step =.5cm ,gray ,very  thin] (0,0)  grid(15 ,2);
+\end{tikzpicture}
+\end{centering}
+\end{parts}
+
+\clearpage %Aufgabe 3
+\question Task (10 points):\\
+\begin{parts}
+\part A signal has the frequency $f=1234$ Hz. Determine the corresponding frequencies in Bark and mel.
+\\\\
+\begin{centering}
+\begin{tikzpicture} %Bild 3
+\draw[step =.5cm ,gray ,very  thin] (0,0)  grid(15 ,5);
+\end{tikzpicture}
+\end{centering}\\\\
+\part What is the time resolution in milliseconds and the frequency resolution in Bark for the human ear?
+\\\\
+\begin{centering}
+\begin{tikzpicture} %Bild 3
+\draw[step =.5cm ,gray ,very  thin] (0,0)  grid(15 ,5);
+\end{tikzpicture}
+\end{centering}\\\\
+\clearpage
+In the following, it is assumed that $y(n)=x(n)+d(n)$, $x(n)$ und $d(n)$ are uncorrelated. $d(n)$ is additive white Gaussian noise.
+\part For which $p$ the following is true: $\left|Y(f)\right|^p\approx\left|X(f)\right|^p+\left|D(f)\right|^p$\\\\
+\begin{centering}
+\begin{tikzpicture} %Bild 3
+\draw[step =.5cm ,gray ,very  thin] (0,0)  grid(15 ,2);
+\end{tikzpicture}
+\end{centering}\\\\
+\part What is the abbreviation of this assumed noise model?
+\\\\
+\begin{centering}
+\begin{tikzpicture} %Bild 3
+\draw[step =.5cm ,gray ,very  thin] (0,0)  grid(15 ,3);
+\end{tikzpicture}
+\end{centering}\\\\
+\part Which property is fullfilled by the spectrum of  $d(n)$?\\\\
+\begin{centering}
+\begin{tikzpicture} %Bild 3
+\draw[step =.5cm ,gray ,very  thin] (0,0)  grid(15 ,3);
+\end{tikzpicture}
+\end{centering}\\\\
+\part Which properties are fullfilled by the samples of  $d(n)$ in time domain?\\\\
+\begin{centering}
+\begin{tikzpicture} %Bild 3
+\draw[step =.5cm ,gray ,very  thin] (0,0)  grid(15 ,5);
+\end{tikzpicture}
+\end{centering}
+\end{parts}
+
+\clearpage %Aufgabe 4
+\question Task (10 points):\\
+\begin{parts}
+\part Human speech is recorded by a microphone. What is the typical frequency range of human speech? What is the typical mean value of the recorded signal?
+\\\\
+\begin{centering}
+\begin{tikzpicture} %Bild 3
+\draw[step =.5cm ,gray ,very  thin] (0,0)  grid(15 ,6);
+\end{tikzpicture}
+\end{centering}\\\\
+\part Which delay in milliseconds is produced by a symmetric FIR-filter in the passband? The length of the filter is $N=20$, the sampling rate is $r=16$ kHz. 
+\\\\
+\begin{centering}
+\begin{tikzpicture} %Bild 3
+\draw[step =.5cm ,gray ,very  thin] (0,0)  grid(15 ,6);
+\end{tikzpicture}
+\end{centering}\\\\
+\clearpage
+In the following, the IIR-filter  $y(n)=a\cdot y(n-1)+(1-a)\cdot x(n)$ is discussed.
+\part For which value of $a$ is the filter stable?
+\\\\
+\begin{centering}
+\begin{tikzpicture} %Bild 3
+\draw[step =.5cm ,gray ,very  thin] (0,0)  grid(15 ,3);
+\end{tikzpicture}
+\end{centering}\\\\
+\part Give the gain of the DC component:  $H\left(f=0\right)$.\\\\
+\begin{centering}
+\begin{tikzpicture} %Bild 3
+\draw[step =.5cm ,gray ,very  thin] (0,0)  grid(15 ,5);
+\end{tikzpicture}
+\end{centering}\\\\
+\part An input signal $x(n)$ is given. Write Python code to implement the above given IIR-filter.\\\\
+\begin{python}
+import numpy as np
+a = 0.9
+N = 1000
+x = np.random.randn(N)
+\end{python}
+\begin{centering}
+\begin{tikzpicture} %Bild 3
+\draw[step =.5cm ,gray ,very  thin] (0,0)  grid(15 ,5);
+\end{tikzpicture}
+\end{centering}
+\end{parts}
+
+\clearpage %Aufgabe 5
+\question Task (10 points):\\
+For all ten following Python-snippets the following introduction line is assumed:
+\begin{python}
+import numpy as np
+\end{python}
+Determine for each snippet  if the ouput is A or B (by marking the correct output on the sheet).
+
+\begin{python}
+x = np.ones(5)
+assert x.sum()==5, `A'
+print(`B')
+\end{python}
+
+\begin{python}
+x = np.array([1, 0, 0])
+a = np.array([1, -0.5])
+y = np.array([0, 0])
+for i in range(2):
+    y[i] = x[i] + 0.5 * y[i-1] if i > 0 else x[i]
+assert (y == [1, 0.5]).all(), `A'
+print(`B')
+\end{python}
+
+\begin{python}
+x = np.array([1, 0, 0])
+b = np.array([1, 1, 1])
+y = np.convolve(x, b, mode='full')
+assert (y == [1, 1, 1, 0, 0]).all(), `A'
+print(`B')
+\end{python}
+
+\begin{python}
+x = np.array([1, 0, 0, 0])
+X = np.fft.fft(x)
+assert X[0] == X[-1], `A'
+print(`B')
+\end{python}
+
+\begin{python}
+x = np.array([1, 2, 3])
+b = np.array([1, 1])
+y = np.convolve(x, b, mode='valid')
+assert (y == [3, 5]).all(), `A'
+print(`B')
+\end{python}
+
+\begin{python}
+x = np.array([1, 2, 3, 4])
+X = np.fft.fft(x)
+assert np.isreal(X).all(), `A'
+print(`B')
+\end{python}
+
+\begin{python}
+x = np.array([1, 1, 1, 1])
+X = np.fft.fft(x)
+assert abs(X[1]) == 0, `A'
+print(`B')
+\end{python}
+
+\begin{python}
+x = np.array([1, 2, 3])
+assert np.var(x) == 0.6666666666666666, `A'
+print(`B')
+\end{python}
+
+\begin{python}
+x = np.array([1, 2, 3])
+assert np.std(x) == 1, `A'
+print(`B')
+\end{python}
+
+\begin{python}
+x = np.array([1, 2, 3])
+assert np.mean(x) == 2, `A'
+print(`B')
+\end{python}
+
+\end{questions}
+\end{document}
+
+
+

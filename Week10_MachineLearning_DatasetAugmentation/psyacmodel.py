@@ -1,3 +1,5 @@
+# source: https://github.com/TUIlmenauAMS/Python-Audio-Coder/blob/master/PythonPsychoacoustics/psyacmodel.py
+
 #Programs to implement a psycho-acoustic model
 #Using a matrix for the spreading function (faster)
 #Gerald Schuller, Nov. 2016
