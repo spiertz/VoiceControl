@@ -1,0 +1,16 @@
+Regarding the code blocks:
+asserts are nice as a Conclusion of a single code block. This Shows: everything is working correctly. But Graphs are better for learning and understanding.
+Always start a code block with a comment which Parameter has to have the Focus by playing around with the given code, e.g.: # Change the value of K in the range 100...1000 and check the resulting graph of xyz
+
+Regarding the whole Jupyter Notebook:
+start with a Motivation by answering the following questions:
+whats going wrong so far, what should be fixed by the following algorithm?
+Why this algorithm is Chosen for solving the Above mentioned issues?
+Sound examples are good for motivational part. Of Course, Sound examples are reasonable and helpful at any stage.
+Bevor starting this Notebook, you should have read and understood the following Topics.
+
+Regarding the exam preparation Task:
+sometimes, the Tasks are not defined very precisely. Extend the given informations.
+
+Regarding the MiniOPS:
+Adapt the MiniOPS to the lessons-content and provide it.
