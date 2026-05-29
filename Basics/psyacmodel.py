@@ -47,7 +47,8 @@ def maskingThresholdBark(mXbark,spreadingfuncmatrix,alpha,fs,nfilts):
   #Returns: mTbark: the resulting Masking Threshold on the Bark scale 
   
   #Compute the non-linear superposition:
-  mTbark=np.dot(mXbark**alpha, spreadingfuncmatrix**alpha)
+  #mTbark=np.dot(mXbark**alpha, spreadingfuncmatrix**alpha) # original code
+  mTbark=np.dot(spreadingfuncmatrix**alpha, mXbark**alpha)
   #apply the inverse exponent to the result:
   mTbark=mTbark**(1.0/alpha)
   #Threshold in quiet:
@@ -61,7 +62,12 @@ def maskingThresholdBark(mXbark,spreadingfuncmatrix,alpha,fs,nfilts):
   LTQ=np.clip((3.64*(f/1000.)**-0.8 -6.5*np.exp(-0.6*(f/1000.-3.3)**2.)
       +1e-3*((f/1000.)**4.)),-20,120)
   #Maximum of spreading functions and hearing threshold in quiet:
-  mTbark=np.max((mTbark, 10.0**((LTQ-120)/20)),0)
+  # check, if mTbark is matrix or vector, and apply the max accordingly
+  LTQ=10.0**((LTQ-120)/20) # convert from dB to "voltage"
+  if mTbark.ndim == 1:
+    mTbark=np.maximum(mTbark, LTQ)
+  else:
+    mTbark=np.max((mTbark, np.outer(LTQ, np.ones(mTbark.shape[1]))), axis=0)
   return mTbark
 
 
@@ -107,9 +113,12 @@ def mapping2bark(mX,W,nfft):
   #W: mapping matrix from function mapping2barkmat
   #nfft: : number of subbands in fft
   #returns: mXbark, magnitude mapped to the Bark scale
-  nfreqs=int(nfft/2)
+  #nfreqs = int(nfft/2) # original code, but we need nfft/2+1 for the DC component, hence the assert below and the change in the mapping2barkmat function
+  nfreqs=int(nfft/2) + 1 
+  assert mX.shape[0] == nfreqs, "mX should have at least nfreqs subbands" # additional assert
   #Here is the actual mapping, suming up powers and conv. back to Voltages:
-  mXbark = (np.dot( np.abs(mX[:nfreqs])**2.0, W[:, :nfreqs].T))**(0.5)
+  #mXbark = (np.dot( np.abs(mX)**2.0, W[:, :nfreqs].T))**(0.5) # original code
+  mXbark = np.dot(W[:, :nfreqs], np.abs(mX)**2.0)**(0.5)
   return mXbark
 
 def mappingfrombarkmat(W,nfft):
@@ -131,8 +140,9 @@ def mappingfrombark(mTbark,W_inv,nfft):
   #W_inv : inverse mapping matrix W_inv from matrix W for mapping back from bark scale
   #nfft: : number of subbands in fft
   #returns: mT, masking threshold in the linear scale
-  nfreqs=int(nfft/2)
-  mT = np.dot(mTbark, W_inv[:, :nfreqs].T)
+  nfreqs=int(nfft/2) + 1
+  #mT = np.dot(mTbark, W_inv[:, :nfreqs].T) # original code
+  mT = np.dot(W_inv[:, :nfreqs], mTbark)
   return mT
 
 

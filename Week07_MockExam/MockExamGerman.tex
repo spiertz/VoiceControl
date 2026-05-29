@@ -133,7 +133,7 @@ y = np.random.randn(10000)
 \end{tikzpicture}
 \end{centering}\\\\
 \clearpage
-Im Folgenden wird eine STFT auf ein Signal $x(n)$ angewendet. Die Abtastrate ist $r=48$ kHz, das Signal hat eine Dauer von $70$ Minuten. Die Blocklänge ist $N=1000$, die Überlappung ist $75$ \%, die Transformationslänge ist $K=2028$.
+Im Folgenden wird eine STFT auf ein Signal $x(n)$ angewendet. Die Abtastrate ist $r=48$ kHz, das Signal hat eine Dauer von $70$ Minuten. Die Blocklänge ist $N=1000$, die Überlappung ist $75$ \%, die Transformationslänge ist $K=2048$.
 \part Was sind die Vorteile von großen Blocklängen $N$? Was sind die Vorteile von kurzen Blocklängen $N$?\\\\
 \begin{centering}
 \begin{tikzpicture} %Bild 3
@@ -157,7 +157,7 @@ Im Folgenden wird eine STFT auf ein Signal $x(n)$ angewendet. Die Abtastrate ist
 \clearpage %Aufgabe 3
 \question Aufgabe (10 Punkte):\\
 \begin{parts}
-\part Ein Signal hat die Frequenz $f=1234$ Hz. Bestimmen Sie die dazugehörigen Werte in Bark und mel.\\\\
+\part Ein Signal hat die Frequenz $f=1234$ Hz. Berechnen Sie die dazugehörigen Werte in Bark und mel.\\\\
 \begin{centering}
 \begin{tikzpicture} %Bild 3
 \draw[step =.5cm ,gray ,very  thin] (0,0)  grid(15 ,5);
@@ -200,7 +200,7 @@ Im Folgenden gilt: $y(n)=x(n)+d(n)$, $x(n)$ und $d(n)$ sind unkorreliert. Bei $d
 \clearpage %Aufgabe 4
 \question Aufgabe (10 Punkte):\\
 \begin{parts}
-\part Menschliche Sprache wird mit einem Mikrofon aufgenommen. Was ist der typische Frequenzbereich der menschlichen Sprache? Was ist der typische Mittelwert des aufgenommenen Signals?\\\\
+\part Menschliche Sprache wird mit einem Mikrofon aufgenommen. Was ist der typische Frequenzbereich der menschlichen Sprache? Was ist die typische mittlere Amplitude im Zeitbereich des aufgenommenen Signals?\\\\
 \begin{centering}
 \begin{tikzpicture} %Bild 3
 \draw[step =.5cm ,gray ,very  thin] (0,0)  grid(15 ,6);
@@ -246,7 +246,7 @@ Die folgenden zehn Python-Schnipsel sollen alle mit einem vorangestellten
 \begin{python}
 import numpy as np
 \end{python}
-beginnen. Bestimmen Sie für jeden Schnipsel, ob die Ausgabe A oder B ist (durch Markieren der korrekten Ausgabe auf dem Aufgabenblatt).
+beginnen. Bestimmen Sie für jeden Schnipsel, ob die Ausgabe A oder B ist (durch Markieren der korrekten Ausgabe auf dem Aufgabenblatt). Jede richtige Antwort gibt $2$ Teilpunkte. Die Gesamtpunktzahl für die gesamte Aufgabe berechnet sich aus der Summe der Teilpunkte minus zehn. Bei einer negativen Gesamtpunktzahl werden $0$ Punkte vergeben.
 
 \begin{python}
 x = np.ones(5)
