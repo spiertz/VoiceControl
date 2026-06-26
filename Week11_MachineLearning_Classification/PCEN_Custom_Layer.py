@@ -26,7 +26,8 @@ class PCEN_Layer(nn.Module):
             eps=1e-6                                                                                                                    # Small constant to avoid division by zero --> eps      
     ):
         super(PCEN_Layer, self).__init__()
-        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")                                                            # Läuft entweder auf der GPU oder CPU --> ohne gibt es sonst Konflikt
+        #device = torch.device("cuda" if torch.cuda.is_available() else "cpu")      
+        device = torch.device("cpu")                            
         T = time_constant * sr / hop_length
         b = (torch.sqrt(torch.tensor(1 + 4 * T**2)) - 1) / (2 * T**2)
         #
